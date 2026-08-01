@@ -1,0 +1,30 @@
+services:
+  tests-web:
+    build: .
+    command: npm run test:web
+    environment:
+      - WEB_BASE_URL=${WEB_BASE_URL:-https://the-internet.herokuapp.com}
+      - CI=true
+      - HEADLESS=true
+    volumes:
+      - ./allure-results:/app/allure-results
+      - ./output:/app/output
+
+  tests-api:
+    build: .
+    command: npm run test:api
+    environment:
+      - API_BASE_URL=${API_BASE_URL:-https://jsonplaceholder.typicode.com}
+      - CI=true
+    volumes:
+      - ./allure-results:/app/allure-results
+
+  allure-report:
+    build: .
+    command: npm run allure:generate
+    volumes:
+      - ./allure-results:/app/allure-results
+      - ./allure-report:/app/allure-report
+    depends_on:
+      - tests-web
+      - tests-api
