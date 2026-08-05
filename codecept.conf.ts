@@ -6,7 +6,7 @@ export const config: CodeceptJS.MainConfig = {
   helpers: {
     Playwright: {
       url: process.env.WEB_BASE_URL || 'https://the-internet.herokuapp.com',
-      show: process.env.HEADLESS === 'false',
+      show: process.env.HEADLESS === 'true',
       browser: 'chromium',
       windowSize: '1920x1080',
       waitForTimeout: 10000,
@@ -27,6 +27,7 @@ export const config: CodeceptJS.MainConfig = {
     I: './steps_file.ts',
     loginPage: './pages/LoginPage.ts',
     searchPage: './pages/SearchPage.ts',
+    demoQAPage: './pages/DemoQAPage.ts',
   },
 
   plugins: {

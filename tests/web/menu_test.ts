@@ -1,4 +1,4 @@
-Feature('Menu');
+Feature('Menu').tag('@web');
 
 Scenario('validar página principal', async ({ I }) => {
   I.amOnPage('/');

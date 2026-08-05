@@ -1,4 +1,4 @@
-Feature('Google');
+Feature('Google').tag('@web');
 
 Scenario('captura de Google', async ({ I }) => {
   I.amOnPage('https://www.google.com');

@@ -1,4 +1,4 @@
-Feature('Login personalizado');
+Feature('Login personalizado').tag('@web');
 
 Scenario('inicio de sesión exitoso', async ({ I }) => {
   I.amOnPage('/login');
