@@ -2,28 +2,24 @@ import { demoqaData } from '../../data/web/demoqaData';
 
 Feature('DemoQA Form').tag('@demoqa');
 
-Scenario(
-  'llenar formulario de DemoQA',
-  async ({ demoQAPage, I }) => {
-    demoQAPage.openHome();
+Scenario('llenar formulario con Data', async ({ demoQAPage, I }) => {
 
-    demoQAPage.openForms();
+  demoQAPage.openHome();
 
-    demoQAPage.openPracticeForm();
+  demoQAPage.openPracticeForm();
 
-    demoQAPage.fillForm(
-      demoqaData.firstName,
-      demoqaData.lastName,
-      demoqaData.email,
-      demoqaData.phone
-    );
+  demoQAPage.fillBasicData(demoqaData);
 
-    demoQAPage.takeScreenshot('formulario_lleno.png');
+  demoQAPage.selectHobby();
 
-    demoQAPage.submit();
+  demoQAPage.addAddress(demoqaData);
 
-    I.see('Thanks for submitting the form');
+  demoQAPage.takeScreenshot('formulario_lleno.png');
 
-    demoQAPage.takeScreenshot('formulario_enviado.png');
-  }
-);
+  demoQAPage.submitForm();
+
+  I.see('Thanks for submitting the form');
+
+  demoQAPage.takeScreenshot('formulario_enviado.png');
+
+});
