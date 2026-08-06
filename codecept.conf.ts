@@ -36,7 +36,7 @@ export const config: CodeceptJS.MainConfig = {
     allure: {
       enabled: true,
       require: 'allure-codeceptjs',
-      outputDir: './allure-results'
+      outputDir: './allure-results',
     },
   },
 

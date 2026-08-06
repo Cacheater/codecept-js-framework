@@ -44,7 +44,7 @@ export default {
 
     // Botones
     submit: '#submit',
-    close: '#closeLargeModal'
+    close: '#closeLargeModal',
   },
 
   openHome() {
@@ -55,20 +55,12 @@ export default {
     I.click(this.locators.formsCard);
     I.click(this.locators.practiceForm);
   },
-  fillBasicData(data: {
-    firstName: string;
-    lastName: string;
-    email: string;
-    phone: string;
-
-  }) {
-
+  fillBasicData(data: { firstName: string; lastName: string; email: string; phone: string }) {
     I.fillField(this.locators.firstName, data.firstName);
     I.fillField(this.locators.lastName, data.lastName);
     I.fillField(this.locators.email, data.email);
     I.click(this.locators.genderMale);
     I.fillField(this.locators.mobile, data.phone);
-
   },
 
   selectHobby() {
@@ -86,5 +78,5 @@ export default {
 
   takeScreenshot(name: string) {
     I.saveScreenshot(name);
-  }
+  },
 };

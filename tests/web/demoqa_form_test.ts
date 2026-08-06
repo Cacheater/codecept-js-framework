@@ -3,7 +3,6 @@ import { demoqaData } from '../../data/web/demoqaData';
 Feature('DemoQA Form').tag('@demoqa');
 
 Scenario('llenar formulario con Data', async ({ demoQAPage, I }) => {
-
   demoQAPage.openHome();
 
   demoQAPage.openPracticeForm();
@@ -21,5 +20,4 @@ Scenario('llenar formulario con Data', async ({ demoQAPage, I }) => {
   I.see('Thanks for submitting the form');
 
   demoQAPage.takeScreenshot('formulario_enviado.png');
-
 });

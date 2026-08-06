@@ -13,12 +13,10 @@ Scenario('usuario', async ({ I }) => {
 Feature('Usuarios_console');
 
 Scenario('usuario', async ({ I }) => {
-
   const response = await I.sendGetRequest('/users/1');
 
   console.log('Status:', response.status);
   console.log('Headers:', response.headers);
   console.log('Body:', response.data);
   assert.strictEqual(response.status, 200);
-
 });
