@@ -6,7 +6,7 @@ export const config: CodeceptJS.MainConfig = {
   helpers: {
     Playwright: {
       url: process.env.WEB_BASE_URL || 'https://the-internet.herokuapp.com',
-      show: process.env.HEADLESS === 'true',
+      show: process.env.HEADLESS === 'false',
       browser: 'chromium',
       windowSize: '1920x1080',
       waitForTimeout: 10000,
